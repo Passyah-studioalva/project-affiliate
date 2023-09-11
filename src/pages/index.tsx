@@ -33,7 +33,7 @@ export default function Home({data}:any) {
         <Grid gap={5} mt={10}>
           <SimpleGrid p={2} rounded={"md"} bg={"yellow.100"} columns={3}>
             <Text>01.</Text>
-            <Text>Product Name</Text>
+            <Text textAlign={"center"}>Product Name</Text>
             <Flex justifyContent={"end"}>
               <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
             </Flex>
