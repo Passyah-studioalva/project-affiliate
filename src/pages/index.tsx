@@ -13,9 +13,9 @@ import {
 } from "@chakra-ui/react";
 import SHARE from "../assets/share.png";
 
-export default function Home({data}:any) {
+export default function Home({ data }: any) {
   const builder = imageUrlBuilder(client);
-  const urlFor = (source:any) => {
+  const urlFor = (source: any) => {
     return builder.image(source);
   };
   return (
@@ -31,20 +31,24 @@ export default function Home({data}:any) {
         <Center pt={10}>@Dinarmly_</Center>
         {/* Product Name */}
         <Grid gap={5} mt={10}>
-          <SimpleGrid p={2} rounded={"md"} bg={"yellow.100"} columns={3}>
-            <Text>01.</Text>
-            <Text textAlign={"center"}>Product Name</Text>
-            <Flex justifyContent={"end"}>
-              <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
-            </Flex>
-          </SimpleGrid>
-          <SimpleGrid p={2} rounded={"md"} bg={"yellow.100"} columns={3}>
-            <Text>02.</Text>
-            <Text textAlign={"center"}>Product Name</Text>
-            <Flex justifyContent={"end"}>
-              <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
-            </Flex>
-          </SimpleGrid>
+          {data.map((item: any) => {
+            return (
+              <a
+                key={item._id}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SimpleGrid p={2} rounded={"md"} bg={"yellow.100"} columns={3}>
+                  <Text>{item.number}.</Text>
+                  <Text textAlign={"center"}>{item.title}</Text>
+                  <Flex justifyContent={"end"}>
+                    <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
+                  </Flex>
+                </SimpleGrid>
+              </a>
+            );
+          })}
         </Grid>
       </Container>
     </>
@@ -52,7 +56,7 @@ export default function Home({data}:any) {
 }
 
 const client = createClient({
-  projectId: "xqpchy85",
+  projectId: "iwjwzghi",
   dataset: "production",
   /* YY - MM - DD */
   apiVersion: "2023-11-09",
