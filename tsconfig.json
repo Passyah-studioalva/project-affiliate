@@ -14,9 +14,10 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@src*": ["./src"],
-      "@styles*": ["./src/pages/styles"],
-      "@assets": ["./src/assets"]
+      "@src/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@styles/*": ["./src/pages/styles/*"],
+      "@assets/*": ["./assets/*"],
     },
     "typeRoots": ["types.d.ts"]
   },
