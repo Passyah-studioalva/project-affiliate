@@ -3,20 +3,22 @@ import { Container } from "@chakra-ui/react";
 import Navbar from "@components/layout/navbar";
 import CopyRight from "@components/layout/footer/copy-right";
 import MetaHead from "@components/layout/meta-head";
+import { Analytics } from '@vercel/analytics/react';
 
 type Props = {
   children: ReactNode;
 };
 
 const Layout: React.FC<Props> = ({ children }) => {
-
   return (
     <Container maxW="container.md" bg="blue.100">
       <nav>
         <MetaHead />
-        
       </nav>
-      <main style={{ minHeight: "100vh" }}>{children}</main>
+      <main style={{ minHeight: "100vh" }}>
+        {children}
+        <Analytics />
+      </main>
       <footer>
         <CopyRight />
       </footer>
