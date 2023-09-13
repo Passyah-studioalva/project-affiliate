@@ -14,12 +14,12 @@ import ProductCard from "@src/components/home/product-card";
 import X from "@assets/close.png";
 
 export default function Home({ data }: any) {
-  const propsData = data.sort(sort_by_id())
+  const propsData = data.sort(sort_by_id());
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState([]);
 
   function sort_by_id() {
-    return function (elem1:any, elem2:any) {
+    return function (elem1: any, elem2: any) {
       if (elem1.number < elem2.number) {
         return -1;
       } else if (elem1.id > elem2.id) {
@@ -58,9 +58,10 @@ export default function Home({ data }: any) {
             border={"1px"}
             borderColor={"blue.600"}
             letterSpacing={"0.5px"}
+            size={"lg"}
           />
           <InputRightElement>
-            <Search2Icon />
+            <Search2Icon mt={2} mr={2} />
           </InputRightElement>
         </InputGroup>
       </Box>
