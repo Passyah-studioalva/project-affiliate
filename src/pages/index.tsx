@@ -57,6 +57,7 @@ export default function Home({ data }: any) {
             placeholder="cari nomer / nama disini ?"
             border={"1px"}
             borderColor={"blue.600"}
+            letterSpacing={"0.5px"}
           />
           <InputRightElement>
             <Search2Icon />
