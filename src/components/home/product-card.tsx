@@ -13,8 +13,8 @@ export default function ProductCard({ data }: any) {
             rel="noopener noreferrer"
           >
             <Flex p={3} rounded={"md"} bg={"yellow.100"} alignItems={"center"} justifyContent={"space-between"}>
-              <Text>{item.number}.</Text>
-              <Text textAlign={"center"}>{item.title}</Text>
+              <Text letterSpacing={"1px"}>{item.number}.</Text>
+              <Text letterSpacing={"1px"} textAlign={"center"}>{item.title}</Text>
               <Flex justifyContent={"end"}>
                 <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
               </Flex>
