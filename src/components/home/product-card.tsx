@@ -12,13 +12,13 @@ export default function ProductCard({ data }: any) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <SimpleGrid p={2} rounded={"md"} bg={"yellow.100"} columns={3}>
+            <Flex p={3} rounded={"md"} bg={"yellow.100"} alignItems={"center"} justifyContent={"space-between"}>
               <Text>{item.number}.</Text>
               <Text textAlign={"center"}>{item.title}</Text>
               <Flex justifyContent={"end"}>
                 <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
               </Flex>
-            </SimpleGrid>
+            </Flex>
           </a>
         );
       })}
