@@ -22,11 +22,11 @@ const MetaHead: React.FC<PropsMeta> = ({
       "shopee, inspirasi outfit, rekomendasi outfit, racun shopee, link shopee, product shopee, promo shopee, shopee affiliate, shopee live, diskon 50%",
     url: "https://project-affiliate.vercel.app/",
     robots: "index, follow",
-    image: image,
+    image: './favicon.ico',
     twitterTitle: "Racun Shopee",
     twitterDesc:
       "Shopee adalah situs elektronik komersial yang berkantor pusat di Singapura yang dimiliki oleh Sea Limited, yang didirikan pada 2009 oleh Forrest Li. Shopee pertama kali diluncurkan di Singapura pada tahun 2015, dan sejak itu memperluas jangkauannya ke Malaysia, Thailand, Taiwan, Indonesia, Vietnam, dan Filipina",
-    twitterImg: twitterImg,
+    twitterImg: './favicon.ico',
     type: "website",
   };
 
