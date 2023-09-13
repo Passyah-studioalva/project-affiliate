@@ -2,8 +2,6 @@ import { Text, Flex, Image, SimpleGrid, Grid } from "@chakra-ui/react";
 import SHARE from "@assets/share.png";
 
 export default function ProductCard({ data }: any) {
-    console.log(data);
-    
   return (
     <Grid gap={5} mt={10}>
       {data.map((item: any) => {
