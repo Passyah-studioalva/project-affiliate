@@ -59,6 +59,7 @@ export default function Home({ data }: any) {
             borderColor={"blue.600"}
             letterSpacing={"0.5px"}
             size={"lg"}
+            py={5}
           />
           <InputRightElement>
             <Search2Icon mt={2} mr={2} />
