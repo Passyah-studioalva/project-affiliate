@@ -48,7 +48,7 @@ export default function Home({ data }: any) {
 
   return (
     <>
-      <Box pt={10}>
+      <Box pt={16}>
         <InputGroup>
           <Input
             value={keyword}
