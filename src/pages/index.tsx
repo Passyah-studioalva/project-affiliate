@@ -76,7 +76,7 @@ export default function Home({ data }: any) {
           justifyContent={"center"}
         >
           <Image src={X.src} w={"80px"} h={"80px"} alt="not-found" />
-          <Text>ups coba kata kunci lain</Text>
+          <Text letterSpacing={"0.5px"}>ups coba kata kunci lain</Text>
         </Flex>
       )}
     </>
