@@ -12,10 +12,18 @@ export default function ProductCard({ data }: any) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Flex p={3} rounded={"md"} bg={"yellow.100"} alignItems={"center"} justifyContent={"space-between"}>
+            <Flex
+              p={3}
+              rounded={"md"}
+              bg={"yellow.100"}
+              alignItems={"center"}
+              justifyContent={"space-between"}
+            >
               <Text letterSpacing={"0.5px"}>{item.number}.</Text>
-              <Text letterSpacing={"0.5px"} textAlign={"center"}>{item.title}</Text>
-              <Flex justifyContent={"end"}>
+              <Text letterSpacing={"0.5px"} textAlign={"center"}>
+                {item.title.replace(/[0-9]/g, "")}
+              </Text>
+              <Flex justifyContent={"end"} boxSize={"25px"}>
                 <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
               </Flex>
             </Flex>
