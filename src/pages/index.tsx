@@ -94,7 +94,7 @@ const client = createClient({
 });
 
 export async function getStaticProps() {
-  const data = await client.fetch(`*[_type == "testing"]`);
+  const data = await client.fetch(`*[_type == "shopee"]`);
 
   return {
     props: {
