@@ -3,7 +3,7 @@ import SHARE from "@assets/share.png";
 
 export default function ProductCard({ data }: any) {
   return (
-    <Grid gap={5} mt={10}>
+    <Grid gap={5} mt={10} mb={16}>
       {data.map((item: any) => {
         return (
           <a
