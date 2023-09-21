@@ -21,7 +21,8 @@ export default function ProductCard({ data }: any) {
             >
               <Text letterSpacing={"0.5px"}>{item.number}.</Text>
               <Text letterSpacing={"0.5px"} textAlign={"center"}>
-                {item.title.replace(/[0-9]/g, "")}
+                {/* {item.title.replace(/[0-9]/g, "")} */}
+                {item.title}
               </Text>
               <Flex justifyContent={"end"} boxSize={"25px"}>
                 <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
