@@ -60,8 +60,10 @@ export default function Home({ data }: any) {
             size={"lg"}
             py={5}
             className="bg-text"
-            _placeholder={{ color: "black", fontWeight: 500 }}
-            _focus={{ borderColor: "black" }}
+            _placeholder={{ color: "black", fontWeight: 400 }}
+            shadow={"none"}
+            _focus={{ border: "1px", borderColor: "black", shadow: "none" }}
+            _hover={{ border: "1px", borderColor: "black", shadow: "none" }}
           />
           <InputRightElement>
             <Search2Icon mt={2} mr={2} />
