@@ -17,7 +17,7 @@ body {
 .bg-image {
   max-height: max-content;
   min-height: 100vh;
-  background-image: url("../../assets/flower.jpeg");
+  /* background-image: url("../../assets/flower.jpeg"); */
   object-position: center;
   background-repeat: no-repeat;
   background-size: cover;
