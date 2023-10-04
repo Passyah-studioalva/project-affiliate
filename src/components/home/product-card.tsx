@@ -15,9 +15,13 @@ export default function ProductCard({ data }: any) {
             <Flex
               p={3}
               rounded={"md"}
-              bg={"yellow.100"}
               alignItems={"center"}
               justifyContent={"space-between"}
+              // className="bg-text"
+              backgroundColor={"transparent"}
+              border={"1px"}
+              borderColor={"black"}
+              fontWeight={500}
             >
               <Text letterSpacing={"0.5px"}>{item.number}.</Text>
               <Text letterSpacing={"0.5px"} textAlign={"center"}>
@@ -25,7 +29,7 @@ export default function ProductCard({ data }: any) {
                 {item.title}
               </Text>
               <Flex justifyContent={"end"} boxSize={"25px"}>
-                <Image src={SHARE.src} w={"25px"} h={"25px"} alt="share" />
+                <Image src={SHARE.src} w={"20px"} h={"20px"} alt="share" />
               </Flex>
             </Flex>
           </a>
