@@ -53,13 +53,15 @@ export default function Home({ data }: any) {
           <Input
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
-            bgColor={"white"}
             placeholder="cari nomer / nama disini ?"
             border={"1px"}
-            borderColor={"blue.600"}
+            borderColor={"black"}
             letterSpacing={"0.5px"}
             size={"lg"}
             py={5}
+            className="bg-text"
+            _placeholder={{ color: "black", fontWeight: 500 }}
+            _focus={{ borderColor: "black" }}
           />
           <InputRightElement>
             <Search2Icon mt={2} mr={2} />
