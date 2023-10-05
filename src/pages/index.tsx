@@ -7,16 +7,41 @@ import {
   Text,
   Image,
   Flex,
+  Center,
 } from "@chakra-ui/react";
 import { Search2Icon } from "@chakra-ui/icons";
 import { useState, useEffect } from "react";
 import ProductCard from "@src/components/home/product-card";
 import X from "@assets/close.png";
+import ReactPaginate from "react-paginate";
+import { log } from "console";
 
 export default function Home({ data }: any) {
   const propsData = data.sort(sort_by_id());
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState([]);
+
+  /* start - script pagination */
+  const [itemOffset, setItemOffset] = useState(0);
+  const itemsPerPage = 10;
+
+  const endOffset = itemOffset + itemsPerPage;
+  const currentItems = keyword
+    ? result.slice(itemOffset, endOffset)
+    : propsData.slice(itemOffset, endOffset);
+
+  const pageCount = Math.ceil(
+    keyword ? result.length / itemsPerPage : propsData.length / itemsPerPage
+  );
+
+  // Invoke when user click to request another page.
+  const handlePageClick = (event: any) => {
+    const newOffset = keyword
+      ? (event.selected * itemsPerPage) % result.length
+      : (event.selected * itemsPerPage) % propsData.length;
+    setItemOffset(newOffset);
+  };
+  /* end - script pagination */
 
   function sort_by_id() {
     return function (elem1: any, elem2: any) {
@@ -39,6 +64,7 @@ export default function Home({ data }: any) {
               .toString()
               .toLowerCase()
               .includes(keyword.toString().toLowerCase());
+            setItemOffset(0);
 
             return y || x;
           })
@@ -72,7 +98,24 @@ export default function Home({ data }: any) {
       </Box>
       {/* Product Number & Name */}
       {result.length > 0 ? (
-        <ProductCard data={result} />
+        <>
+          {currentItems.length <= itemsPerPage && (
+            <Center mt={10}>
+              <ReactPaginate
+                breakLabel="..."
+                nextLabel="Next Page >"
+                onPageChange={handlePageClick}
+                pageCount={pageCount}
+                previousLabel="< Back Page"
+                renderOnZeroPageCount={null}
+                pageRangeDisplayed={0}
+                marginPagesDisplayed={0}
+                className="react-paginate-custome"
+              />
+            </Center>
+          )}
+          <ProductCard data={currentItems} />
+        </>
       ) : (
         <Flex
           mt={"30%"}
