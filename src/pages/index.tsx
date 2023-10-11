@@ -23,7 +23,7 @@ export default function Home({ data }: any) {
   const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 50;
+  const itemsPerPage = 101;
 
   // if results array change, go to the first page
   useEffect(() => {
@@ -51,7 +51,7 @@ export default function Home({ data }: any) {
     return function (elem1: any, elem2: any) {
       if (elem1.number < elem2.number) {
         return -1;
-      } else if (elem1.id > elem2.id) {
+      } else if (elem1.number > elem2.number) {
         return 1;
       } else {
         return 0;
