@@ -23,7 +23,7 @@ export default function Home({ data }: any) {
   const [pageCount, setPageCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const itemsPerPage = 10;
+  const itemsPerPage = 50;
 
   // if results array change, go to the first page
   useEffect(() => {
