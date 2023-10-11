@@ -14,7 +14,6 @@ import { useState, useEffect } from "react";
 import ProductCard from "@src/components/home/product-card";
 import X from "@assets/close.png";
 import ReactPaginate from "react-paginate";
-import { log } from "console";
 
 export default function Home({ data }: any) {
   const propsData = data.sort(sort_by_id());
@@ -22,9 +21,14 @@ export default function Home({ data }: any) {
   const [result, setResult] = useState([]);
 
   /* start - script pagination */
+  // Here we use item offsets; we could also use page offsets
+  // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 10;
 
+  // Simulate fetching items from another resources.
+  // (This could be items from props; or items loaded in a local state
+  // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = keyword
     ? result.slice(itemOffset, endOffset)
@@ -36,6 +40,8 @@ export default function Home({ data }: any) {
 
   // Invoke when user click to request another page.
   const handlePageClick = (event: any) => {
+    console.log(event);
+
     const newOffset = keyword
       ? (event.selected * itemsPerPage) % result.length
       : (event.selected * itemsPerPage) % propsData.length;
@@ -103,13 +109,13 @@ export default function Home({ data }: any) {
             <Center mt={10}>
               <ReactPaginate
                 breakLabel="..."
-                nextLabel="Next Page >"
                 onPageChange={handlePageClick}
-                pageCount={pageCount}
-                previousLabel="< Back Page"
-                renderOnZeroPageCount={null}
                 pageRangeDisplayed={0}
                 marginPagesDisplayed={0}
+                pageCount={pageCount}
+                previousLabel="< Back"
+                nextLabel="Next >"
+                renderOnZeroPageCount={null}
                 className="react-paginate-custome"
               />
             </Center>
