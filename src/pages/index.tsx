@@ -18,36 +18,34 @@ import ReactPaginate from "react-paginate";
 export default function Home({ data }: any) {
   const propsData = data.sort(sort_by_id());
   const [keyword, setKeyword] = useState("");
-  const [result, setResult] = useState([]);
-
-  /* start - script pagination */
-  // Here we use item offsets; we could also use page offsets
-  // following the API or data you're working with.
+  const [result, setResult] = useState(propsData);
+  const [currentItems, setCurrentItems] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   const itemsPerPage = 10;
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
-  const endOffset = itemOffset + itemsPerPage;
-  const currentItems = keyword
-    ? result.slice(itemOffset, endOffset)
-    : propsData.slice(itemOffset, endOffset);
+  // if results array change, go to the first page
+  useEffect(() => {
+    setItemOffset(0);
 
-  const pageCount = Math.ceil(
-    keyword ? result.length / itemsPerPage : propsData.length / itemsPerPage
-  );
+    setCurrentPage(0);
+  }, [result]);
 
-  // Invoke when user click to request another page.
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+
+    setCurrentItems(result.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(result.length / itemsPerPage));
+  }, [result, itemsPerPage, itemOffset]);
+
   const handlePageClick = (event: any) => {
-    console.log(event);
+    const newOffset = (event.selected * itemsPerPage) % result.length;
 
-    const newOffset = keyword
-      ? (event.selected * itemsPerPage) % result.length
-      : (event.selected * itemsPerPage) % propsData.length;
     setItemOffset(newOffset);
+
+    setCurrentPage(event.selected);
   };
-  /* end - script pagination */
 
   function sort_by_id() {
     return function (elem1: any, elem2: any) {
@@ -70,7 +68,6 @@ export default function Home({ data }: any) {
               .toString()
               .toLowerCase()
               .includes(keyword.toString().toLowerCase());
-            setItemOffset(0);
 
             return y || x;
           })
@@ -105,21 +102,21 @@ export default function Home({ data }: any) {
       {/* Product Number & Name */}
       {result.length > 0 ? (
         <>
-          {currentItems.length <= itemsPerPage && (
-            <Center mt={10}>
-              <ReactPaginate
-                breakLabel="..."
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={0}
-                marginPagesDisplayed={0}
-                pageCount={pageCount}
-                previousLabel="< Back"
-                nextLabel="Next >"
-                renderOnZeroPageCount={null}
-                className="react-paginate-custome"
-              />
-            </Center>
-          )}
+          <Center mt={10}>
+            <ReactPaginate
+              breakLabel="..."
+              onPageChange={handlePageClick}
+              pageRangeDisplayed={0}
+              marginPagesDisplayed={0}
+              pageCount={pageCount}
+              forcePage={currentPage}
+              previousLabel="< Back"
+              nextLabel="Next >"
+              renderOnZeroPageCount={null}
+              className="react-paginate-custome"
+            />
+          </Center>
+
           <ProductCard data={currentItems} />
         </>
       ) : (
