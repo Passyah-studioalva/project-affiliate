@@ -19,9 +19,9 @@ body {
   min-height: 100vh;
   /* background-image: url("../../assets/flower.jpeg"); */
   object-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-size: 100% 100%; */
+  /* background-repeat: no-repeat; */
+  background-repeat: repeat;
+  /* background-size: cover; */
   scroll-snap-align: center;
 }
 
@@ -30,4 +30,45 @@ body {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
   /* border: 3px solid #f1f1f1; */
+}
+
+/* PAGINATIONS */
+ul, .react-paginate-custome {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.react-paginate-custome li {
+  font-weight: 500;
+  letter-spacing: 0.06rem;
+  font-style: italic;
+  cursor: pointer;
+}
+.react-paginate-custome .previous a {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+  border-radius: 10px;
+  padding: 10px;
+}
+.react-paginate-custome .previous a:hover {
+  background-color: transparent; /* Fallback color */
+  outline: solid 1px black;
+}
+.react-paginate-custome .next a {
+    background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+  border-radius: 10px;
+  padding: 10px;
+}
+.react-paginate-custome .next a:hover {
+  background-color: transparent;
+  outline: solid 1px black;
+}
+.react-paginate-custome li a[rel="canonical"] {
+  display: none;
+  border: 0;
+}
+.react-paginate-custome .disabled {
+  display: none;
 }
