@@ -10,18 +10,18 @@ export default function ProductCard({ data }: any) {
             key={item._id}
             href={item.link}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
           >
             <Flex
               p={3}
               rounded={"md"}
               alignItems={"center"}
               justifyContent={"space-between"}
-              // className="bg-text"
-              backgroundColor={"transparent"}
-              border={"1px"}
-              borderColor={"black"}
+              // backgroundColor={"transparent"}
+              // border={"1px"}
+              // borderColor={"black"}
               fontWeight={500}
+              className="product-button-link"
             >
               <Text letterSpacing={"0.5px"}>{item.number}.</Text>
               <Text letterSpacing={"0.5px"} textAlign={"center"}>

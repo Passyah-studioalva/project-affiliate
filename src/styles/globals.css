@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Teko', sans-serif;
+  font-family: "Teko", sans-serif;
 }
 
 html,
@@ -17,23 +17,16 @@ body {
 .bg-image {
   max-height: max-content;
   min-height: 100vh;
-  /* background-image: url("../../assets/flower.jpeg"); */
   object-position: center;
   /* background-repeat: no-repeat; */
   background-repeat: repeat;
-  /* background-size: cover; */
+  background-size: contain;
   scroll-snap-align: center;
 }
 
-/* Position text in the middle of the page/image */
-.bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
-  /* border: 3px solid #f1f1f1; */
-}
-
 /* PAGINATIONS */
-ul, .react-paginate-custome {
+ul,
+.react-paginate-custome {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -46,24 +39,22 @@ ul, .react-paginate-custome {
   cursor: pointer;
 }
 .react-paginate-custome .previous a {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+  background-color: rgb(0, 0, 0, 0.1); /* Black w/opacity/see-through */
   border-radius: 10px;
   padding: 10px;
 }
 .react-paginate-custome .previous a:hover {
-  background-color: transparent; /* Fallback color */
-  outline: solid 1px black;
+  background-color: rgb(255, 221, 238, 0.4); /* Fallback color */
+  /* outline: solid 1px black; */
 }
 .react-paginate-custome .next a {
-    background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.2); /* Black w/opacity/see-through */
+  background-color: rgb(0, 0, 0, 0.1); /* Black w/opacity/see-through */
   border-radius: 10px;
   padding: 10px;
 }
 .react-paginate-custome .next a:hover {
-  background-color: transparent;
-  outline: solid 1px black;
+  background-color: rgb(255, 221, 238, 0.4); /* Fallback color */
+  /* outline: solid 1px black; */
 }
 .react-paginate-custome li a[rel="canonical"] {
   display: none;
@@ -71,4 +62,14 @@ ul, .react-paginate-custome {
 }
 .react-paginate-custome .disabled {
   display: none;
+}
+
+.product-button-link {
+  /* Fallback color */
+  /* background-color: rgb(0, 0, 0);  */
+  /* Black w/opacity/see-through */
+  /* background-color: rgba(0, 0, 0, 0.2);  */
+  background-color: rgb(255, 221, 238, 0.4);
+  border-radius: 10px;
+  padding: 10px;
 }
