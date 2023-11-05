@@ -18,9 +18,6 @@ export default function ProductCard({ data }: any) {
               rounded={"md"}
               alignItems={"center"}
               justifyContent={"space-between"}
-              // backgroundColor={"transparent"}
-              // border={"1px"}
-              // borderColor={"black"}
               fontWeight={500}
               className="product-button-link"
             >

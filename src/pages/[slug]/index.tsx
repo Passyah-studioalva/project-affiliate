@@ -32,6 +32,8 @@ const SlugPage: React.FC<Props> = ({ datas }) => {
       <Center
         as="h1"
         mt={"10%"}
+        rounded={"md"}
+        p={3}
         className="product-button-link"
         letterSpacing={"0.5px"}
         fontWeight={500}

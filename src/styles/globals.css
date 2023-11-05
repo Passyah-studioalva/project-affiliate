@@ -69,12 +69,7 @@ ul,
 }
 
 .product-button-link {
-  /* Fallback color */
-  /* background-color: rgb(0, 0, 0);  */
-  /* Black w/opacity/see-through */
-  /* background-color: rgba(0, 0, 0, 0.2);  */
   background-color: rgb(255, 221, 238, 0.4);
-  border-radius: 10px;
   padding: 10px;
 }
 
