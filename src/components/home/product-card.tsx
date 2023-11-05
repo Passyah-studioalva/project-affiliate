@@ -1,16 +1,17 @@
-import { Text, Flex, Image, SimpleGrid, Grid } from "@chakra-ui/react";
+import { Text, Flex, Image, Grid } from "@chakra-ui/react";
 import SHARE from "@assets/share.png";
+import Link from "next/link";
 
 export default function ProductCard({ data }: any) {
   return (
     <Grid gap={5} mt={10} mb={16}>
       {data?.map((item: any) => {
         return (
-          <a
+          <Link
             key={item._id}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer" 
+            href={item.link ? item.link : item.slug.current}
+            target={item.link ? "_blank" : ""}
+            rel={item.link ? "noopener noreferrer" : ""}
           >
             <Flex
               p={3}
@@ -25,14 +26,13 @@ export default function ProductCard({ data }: any) {
             >
               <Text letterSpacing={"0.5px"}>{item.number}.</Text>
               <Text letterSpacing={"0.5px"} textAlign={"center"}>
-                {/* {item.title.replace(/[0-9]/g, "")} */}
                 {item.title}
               </Text>
               <Flex justifyContent={"end"} boxSize={"25px"}>
                 <Image src={SHARE.src} w={"20px"} h={"20px"} alt="share" />
               </Flex>
             </Flex>
-          </a>
+          </Link>
         );
       })}
     </Grid>
