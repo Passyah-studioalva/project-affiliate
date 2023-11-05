@@ -41,17 +41,19 @@ const SlugPage: React.FC<Props> = ({ datas }) => {
         {data[0]?.title}
       </Center>
 
-      <Box
-        className="container-grid-slug"
-        maxW={"sm"}
-        margin={"auto"}
-        gap={5}
-        pt={"10%"}
-      >
-        {data[0].category.map((item: any, idx: number) => {
-          return <ProductSlug key={idx} data={item} />;
-        })}
-      </Box>
+      {data[0].category && data[0].category.length > 0 && (
+        <Box
+          className="container-grid-slug"
+          maxW={"sm"}
+          margin={"auto"}
+          gap={5}
+          pt={"10%"}
+        >
+          {data[0].category.map((item: any, idx: number) => {
+            return <ProductSlug key={idx} data={item} />;
+          })}
+        </Box>
+      )}
     </>
   );
 };
