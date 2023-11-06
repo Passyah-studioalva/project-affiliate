@@ -1,13 +1,13 @@
-import { Text, Flex, Image, Grid } from "@chakra-ui/react";
+import { Text, Flex, Image, Grid, Box } from "@chakra-ui/react";
 import SHARE from "@assets/share.png";
 import Link from "next/link";
 
 export default function ProductCard({ data }: any) {
   return (
     <Grid gap={5} mt={10} mb={16}>
-      {data?.map((item: any) => {
+      {data?.map((item: any, idx: number) => {
         return (
-          <>
+          <Box key={item._id}>
             {item.link ? (
               <Link
                 key={item._id}
@@ -52,7 +52,7 @@ export default function ProductCard({ data }: any) {
                 </Flex>
               </Link>
             )}
-          </>
+          </Box>
         );
       })}
     </Grid>
