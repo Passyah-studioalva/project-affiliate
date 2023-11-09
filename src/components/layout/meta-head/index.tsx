@@ -62,6 +62,7 @@ const MetaHead: React.FC<PropsMeta> = ({
       />
       {/* <meta property="og:site_name" content="Biztips" /> */}
       <link rel="icon" href="/favicon.ico" />
+      {/* google ads */}
       <meta name="google-adsense-account" content="ca-pub-1523860768772432"></meta>
 
       {/* <!-- Google tag (gtag.js) --> */}
