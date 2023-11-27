@@ -3,7 +3,7 @@ import { Container } from "@chakra-ui/react";
 import CopyRight from "@components/layout/footer/copy-right";
 import MetaHead from "@components/layout/meta-head";
 import { Analytics } from "@vercel/analytics/react";
-import BG from "@assets/abstrak-good1.jpg";
+import BG from "@assets/download.jpg";
 
 type Props = {
   children: ReactNode;
